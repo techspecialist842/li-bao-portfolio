@@ -118,8 +118,8 @@ export default function Projects() {
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
 
       {/* Background decoration */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-purple-600/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-green-600/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-lime-500/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionTitle

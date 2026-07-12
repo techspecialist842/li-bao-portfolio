@@ -2,11 +2,11 @@
 
 @layer base {
   :root {
-    --color-bg: #0c0a1d;
-    --color-bg-mid: #100e26;
-    --color-bg-deep: #080615;
-    --color-bg-navbar: rgba(12, 10, 29, 0.92);
-    --color-primary: #915eff;
+    --color-bg: #0d1f12;
+    --color-bg-mid: #152b1a;
+    --color-bg-deep: #081a0c;
+    --color-bg-navbar: rgba(13, 31, 18, 0.92);
+    --color-primary: #4ade80;
     --color-secondary: #aaa6c3;
     --color-accent: #00d4ff;
     --color-accent2: #ff6b35;
@@ -45,7 +45,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #915eff, #00d4ff);
+    background: linear-gradient(135deg, #4ade80, #86efac);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -59,9 +59,9 @@
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(74, 222, 128, 0.04);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(134, 239, 172, 0.12);
     border-radius: 16px;
   }
 
