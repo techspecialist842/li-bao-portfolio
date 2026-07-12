@@ -69,7 +69,7 @@ function TimelineItem({ exp, index, isLast }) {
 export default function Experience() {
   return (
     <section id="experience" className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#070a1b] to-[#050816]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <SectionTitle

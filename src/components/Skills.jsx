@@ -77,7 +77,7 @@ function SkillCategory({ category, color, items, index }) {
 export default function Skills() {
   return (
     <section id="skills" className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#07091a] to-[#050816]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-purple-500/50" />
 
       <div className="relative z-10 max-w-7xl mx-auto">

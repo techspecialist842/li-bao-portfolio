@@ -2,7 +2,10 @@
 
 @layer base {
   :root {
-    --color-bg: #050816;
+    --color-bg: #0c0a1d;
+    --color-bg-mid: #100e26;
+    --color-bg-deep: #080615;
+    --color-bg-navbar: rgba(12, 10, 29, 0.92);
     --color-primary: #915eff;
     --color-secondary: #aaa6c3;
     --color-accent: #00d4ff;
@@ -31,7 +34,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0a0a1a;
+    background: var(--color-bg-deep);
   }
 
   ::-webkit-scrollbar-thumb {

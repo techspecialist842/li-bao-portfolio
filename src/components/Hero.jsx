@@ -50,8 +50,8 @@ export default function Hero() {
       </div>
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050816]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050816]/60 via-transparent to-[#050816]/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-bg)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg)]/60 via-transparent to-[var(--color-bg)]/30" />
 
       {/* Glow orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse" />

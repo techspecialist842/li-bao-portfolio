@@ -115,7 +115,7 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   return (
     <section id="projects" className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#060918] to-[#050816]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
 
       {/* Background decoration */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-600/5 rounded-full blur-3xl" />

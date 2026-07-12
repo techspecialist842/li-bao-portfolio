@@ -58,7 +58,7 @@ export default function About() {
 
   return (
     <section id="about" className="section-padding relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#060820] to-[#050816]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionTitle
           eyebrow="Who I Am"

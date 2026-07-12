@@ -93,7 +93,7 @@ function ContactForm() {
 export default function Contact() {
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#060818] to-[#020510]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg-deep)]" />
 
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-t from-transparent to-purple-500/30" />
 
