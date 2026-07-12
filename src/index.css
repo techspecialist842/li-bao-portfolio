@@ -2,18 +2,18 @@
 
 @layer base {
   :root {
-    --color-bg: #ecf7e6;
-    --color-bg-mid: #dff0d8;
-    --color-bg-deep: #d0e8c8;
-    --color-bg-navbar: rgba(236, 247, 230, 0.95);
-    --color-text: #1a3320;
-    --color-text-muted: #4a6b50;
-    --color-text-heading: #142818;
-    --color-border: rgba(47, 120, 60, 0.18);
-    --color-primary: #2f8f46;
-    --color-secondary: #4a6b50;
-    --color-accent: #3cb371;
-    --color-accent2: #6b9e3e;
+    --color-bg: #c8e6b0;
+    --color-bg-mid: #b0d998;
+    --color-bg-deep: #98cc82;
+    --color-bg-navbar: rgba(200, 230, 176, 0.95);
+    --color-text: #143318;
+    --color-text-muted: #2d5c35;
+    --color-text-heading: #0d2812;
+    --color-border: rgba(34, 110, 50, 0.28);
+    --color-primary: #228b3a;
+    --color-secondary: #2d5c35;
+    --color-accent: #2e9e4a;
+    --color-accent2: #4a8c2a;
   }
 
   * {
@@ -49,7 +49,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #2f8f46, #5cb85c);
+    background: linear-gradient(135deg, #1a7a32, #3cb85c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -63,11 +63,11 @@
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-border);
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(47, 143, 70, 0.08);
+    box-shadow: 0 4px 24px rgba(34, 110, 50, 0.14);
   }
 
   .text-theme {
