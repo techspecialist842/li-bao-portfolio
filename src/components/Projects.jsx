@@ -18,13 +18,11 @@ function ProjectCard({ project, index }) {
       className="group relative glass-card overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
       style={{ '--card-color': project.color }}
     >
-      {/* Animated border glow */}
       <motion.div
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{ boxShadow: `inset 0 0 30px ${project.color}15, 0 0 30px ${project.color}10` }}
       />
 
-      {/* 3D Scene Header */}
       <div className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
         <div className="absolute inset-0">
           <Suspense fallback={
@@ -36,38 +34,35 @@ function ProjectCard({ project, index }) {
           </Suspense>
         </div>
 
-        {/* Icon overlay */}
         <div className="absolute top-4 left-4 z-10">
-          <div className="w-12 h-12 rounded-xl bg-black/30 backdrop-blur-sm flex items-center justify-center text-2xl border border-white/10">
+          <div className="w-12 h-12 rounded-xl bg-white/70 backdrop-blur-sm flex items-center justify-center text-2xl border border-[var(--color-border)]">
             {project.icon}
           </div>
         </div>
 
-        {/* Stats */}
         <div className="absolute top-4 right-4 z-10 flex gap-2">
-          <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-black/30 backdrop-blur-sm text-xs text-[#aaa6c3] border border-white/10">
+          <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white/70 backdrop-blur-sm text-xs text-theme-muted border border-[var(--color-border)]">
             ⭐ {project.stats.stars.toLocaleString()}
           </div>
-          <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-black/30 backdrop-blur-sm text-xs text-[#aaa6c3] border border-white/10">
+          <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white/70 backdrop-blur-sm text-xs text-theme-muted border border-[var(--color-border)]">
             🍴 {project.stats.forks}
           </div>
         </div>
 
-        {/* Hover overlay with links */}
         <AnimatePresence>
           {hovered && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center gap-4 z-20"
+              className="absolute inset-0 bg-green-900/40 backdrop-blur-sm flex items-center justify-center gap-4 z-20"
             >
               <motion.a
                 href={project.github}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.05 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white text-sm font-medium hover:bg-white/20 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/90 border border-[var(--color-border)] text-[var(--color-text)] text-sm font-medium hover:bg-white transition-colors"
               >
                 <span>🐙</span> GitHub
               </motion.a>
@@ -86,21 +81,19 @@ function ProjectCard({ project, index }) {
         </AnimatePresence>
       </div>
 
-      {/* Content */}
       <div className="p-6">
-        <h3 className="text-white font-bold text-xl mb-3 group-hover:text-purple-200 transition-colors">
+        <h3 className="text-[var(--color-text)] font-bold text-xl mb-3 group-hover:text-green-700 transition-colors">
           {project.title}
         </h3>
-        <p className="text-[#aaa6c3] text-sm leading-relaxed mb-4 line-clamp-3">
+        <p className="text-theme-muted text-sm leading-relaxed mb-4 line-clamp-3">
           {project.description}
         </p>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-2 mt-auto">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 text-xs font-medium rounded-md border border-white/8 bg-white/3 text-[#aaa6c3]"
+              className="px-2.5 py-1 text-xs font-medium rounded-md border bg-white/50 text-theme-muted"
               style={{ borderColor: project.color + '30', color: project.color + 'cc' }}
             >
               {tag}
@@ -144,7 +137,7 @@ export default function Projects() {
             href="https://github.com/libao-engineer"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl border border-white/10 text-[#aaa6c3] hover:text-white hover:border-purple-500/50 transition-all duration-300 group"
+            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl border border-[var(--color-border)] text-theme-muted hover:text-[var(--color-text)] hover:border-green-500/50 transition-all duration-300 group"
           >
             <span>🐙</span>
             <span>View All Projects on GitHub</span>

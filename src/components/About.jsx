@@ -22,7 +22,7 @@ function SectionTitle({ eyebrow, title, subtitle }) {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-purple-400 border border-purple-500/30 rounded-full bg-purple-500/5 mb-4"
+        className="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-green-700 border border-green-500/30 rounded-full bg-green-500/10 mb-4"
       >
         {eyebrow}
       </motion.span>
@@ -31,7 +31,7 @@ function SectionTitle({ eyebrow, title, subtitle }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-4xl md:text-5xl font-black text-white"
+        className="text-4xl md:text-5xl font-black text-[var(--color-text-heading)]"
       >
         {title}
       </motion.h2>
@@ -41,7 +41,7 @@ function SectionTitle({ eyebrow, title, subtitle }) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-4 text-[#aaa6c3] text-lg max-w-2xl mx-auto"
+          className="mt-4 text-theme-muted text-lg max-w-2xl mx-auto"
         >
           {subtitle}
         </motion.p>
@@ -75,24 +75,24 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <p className="text-[#aaa6c3] text-lg leading-relaxed">
-              I'm <span className="text-white font-semibold">Li Bao</span>, a Software Engineer with{' '}
-              <span className="text-purple-400 font-semibold">6+ years</span> of experience crafting
+            <p className="text-theme-muted text-lg leading-relaxed">
+              I'm <span className="text-[var(--color-text)] font-semibold">Li Bao</span>, a Software Engineer with{' '}
+              <span className="text-green-700 font-semibold">6+ years</span> of experience crafting
               high-performance web applications and distributed systems. Based in China, I work remotely
               with teams across the globe, turning complex problems into elegant, scalable solutions.
             </p>
-            <p className="text-[#aaa6c3] text-lg leading-relaxed">
+            <p className="text-theme-muted text-lg leading-relaxed">
               My passion lies at the intersection of engineering and user experience — I believe great
               software should be both{' '}
-              <span className="text-cyan-400 font-semibold">technically excellent</span> and{' '}
-              <span className="text-orange-400 font-semibold">delightfully usable</span>. From architecting
+              <span className="text-green-700 font-semibold">technically excellent</span> and{' '}
+              <span className="text-lime-700 font-semibold">delightfully usable</span>. From architecting
               microservices that handle millions of requests, to crafting immersive 3D web experiences,
               I bring full-stack expertise to every project.
             </p>
 
             {/* Tech Tags */}
             <div className="pt-4">
-              <p className="text-sm font-semibold text-[#aaa6c3] mb-3 uppercase tracking-wider">Tech Stack</p>
+              <p className="text-sm font-semibold text-theme-muted mb-3 uppercase tracking-wider">Tech Stack</p>
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, i) => (
                   <motion.span
@@ -102,7 +102,7 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="px-3 py-1.5 text-xs font-medium text-[#aaa6c3] border border-white/10 rounded-lg bg-white/3 hover:border-purple-500/50 hover:text-purple-300 transition-all cursor-default"
+                    className="px-3 py-1.5 text-xs font-medium text-theme-muted border border-[var(--color-border)] rounded-lg bg-white/50 hover:border-green-500/50 hover:text-green-700 transition-all cursor-default"
                   >
                     {tech}
                   </motion.span>
@@ -120,13 +120,13 @@ export default function About() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="glass-card p-6 hover:border-purple-500/20 transition-all duration-300 group"
+                className="glass-card p-6 hover:border-green-500/30 transition-all duration-300 group"
               >
                 <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-white font-semibold text-sm mb-2">{item.title}</h3>
-                <p className="text-[#aaa6c3] text-xs leading-relaxed">{item.desc}</p>
+                <h3 className="text-[var(--color-text)] font-semibold text-sm mb-2">{item.title}</h3>
+                <p className="text-theme-muted text-xs leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>

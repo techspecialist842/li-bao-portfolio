@@ -10,6 +10,9 @@ const contactInfo = [
   { icon: '📍', label: 'Location', value: 'China (Open to Remote)', href: null },
 ];
 
+const inputClass =
+  'w-full px-4 py-3 rounded-xl bg-white/70 border border-[var(--color-border)] text-[var(--color-text)] placeholder-green-800/30 focus:outline-none focus:border-green-500/50 focus:bg-white/90 transition-all text-sm';
+
 function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState(null);
@@ -38,41 +41,41 @@ function ContactForm() {
           { id: 'email', label: 'Email Address', placeholder: 'john@example.com', type: 'email' },
         ].map((field) => (
           <div key={field.id}>
-            <label className="block text-sm font-medium text-[#aaa6c3] mb-2">{field.label}</label>
+            <label className="block text-sm font-medium text-theme-muted mb-2">{field.label}</label>
             <input
               type={field.type}
               value={form[field.id]}
               onChange={(e) => setForm({ ...form, [field.id]: e.target.value })}
               placeholder={field.placeholder}
               required
-              className="w-full px-4 py-3 rounded-xl bg-white/3 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-purple-500/50 focus:bg-white/5 transition-all text-sm"
+              className={inputClass}
             />
           </div>
         ))}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[#aaa6c3] mb-2">Message</label>
+        <label className="block text-sm font-medium text-theme-muted mb-2">Message</label>
         <textarea
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
           placeholder="Tell me about your project or opportunity..."
           required
           rows={5}
-          className="w-full px-4 py-3 rounded-xl bg-white/3 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-purple-500/50 focus:bg-white/5 transition-all text-sm resize-none"
+          className={`${inputClass} resize-none`}
         />
       </div>
 
       <motion.button
         type="submit"
         disabled={status === 'sending' || status === 'sent'}
-        whileHover={{ scale: status ? 1 : 1.02, boxShadow: '0 0 30px rgba(145,94,255,0.4)' }}
+        whileHover={{ scale: status ? 1 : 1.02, boxShadow: '0 0 30px rgba(47,143,70,0.4)' }}
         whileTap={{ scale: 0.98 }}
         className="w-full py-4 rounded-xl font-semibold text-white transition-all duration-300 cursor-pointer disabled:cursor-not-allowed relative overflow-hidden"
         style={{
           background: status === 'sent'
             ? 'linear-gradient(135deg, #22c55e, #16a34a)'
-            : 'linear-gradient(135deg, #915eff, #00d4ff)',
+            : 'linear-gradient(135deg, #2f8f46, #5cb85c)',
         }}
       >
         {status === 'sending' && (
@@ -94,8 +97,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg-deep)]" />
-
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-t from-transparent to-purple-500/30" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-t from-transparent to-green-500/30" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionTitle
@@ -105,11 +107,10 @@ export default function Contact() {
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Globe & Info */}
           <div>
             <div className="h-64 md:h-80 mb-8 rounded-2xl overflow-hidden">
               <Suspense fallback={
-                <div className="w-full h-full bg-white/3 rounded-2xl flex items-center justify-center text-4xl">🌍</div>
+                <div className="w-full h-full bg-white/50 rounded-2xl flex items-center justify-center text-4xl">🌍</div>
               }>
                 <ContactGlobe />
               </Suspense>
@@ -129,17 +130,17 @@ export default function Contact() {
                       href={info.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block glass-card p-4 hover:border-purple-500/30 hover:bg-white/5 transition-all group"
+                      className="block glass-card p-4 hover:border-green-500/40 hover:bg-white/70 transition-all group"
                     >
                       <div className="text-2xl mb-2">{info.icon}</div>
-                      <div className="text-xs font-semibold text-[#aaa6c3] uppercase tracking-wider mb-1">{info.label}</div>
-                      <div className="text-white text-xs font-medium group-hover:text-purple-300 transition-colors truncate">{info.value}</div>
+                      <div className="text-xs font-semibold text-theme-muted uppercase tracking-wider mb-1">{info.label}</div>
+                      <div className="text-[var(--color-text)] text-xs font-medium group-hover:text-green-700 transition-colors truncate">{info.value}</div>
                     </a>
                   ) : (
                     <div className="glass-card p-4">
                       <div className="text-2xl mb-2">{info.icon}</div>
-                      <div className="text-xs font-semibold text-[#aaa6c3] uppercase tracking-wider mb-1">{info.label}</div>
-                      <div className="text-white text-xs font-medium">{info.value}</div>
+                      <div className="text-xs font-semibold text-theme-muted uppercase tracking-wider mb-1">{info.label}</div>
+                      <div className="text-[var(--color-text)] text-xs font-medium">{info.value}</div>
                     </div>
                   )}
                 </motion.div>
@@ -147,10 +148,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right: Form */}
           <div className="glass-card p-8">
-            <h3 className="text-white font-bold text-2xl mb-2">Send a Message</h3>
-            <p className="text-[#aaa6c3] text-sm mb-8">I typically respond within 24 hours.</p>
+            <h3 className="text-[var(--color-text)] font-bold text-2xl mb-2">Send a Message</h3>
+            <p className="text-theme-muted text-sm mb-8">I typically respond within 24 hours.</p>
             <ContactForm />
           </div>
         </div>

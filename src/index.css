@@ -2,14 +2,18 @@
 
 @layer base {
   :root {
-    --color-bg: #0d1f12;
-    --color-bg-mid: #152b1a;
-    --color-bg-deep: #081a0c;
-    --color-bg-navbar: rgba(13, 31, 18, 0.92);
-    --color-primary: #4ade80;
-    --color-secondary: #aaa6c3;
-    --color-accent: #00d4ff;
-    --color-accent2: #ff6b35;
+    --color-bg: #ecf7e6;
+    --color-bg-mid: #dff0d8;
+    --color-bg-deep: #d0e8c8;
+    --color-bg-navbar: rgba(236, 247, 230, 0.95);
+    --color-text: #1a3320;
+    --color-text-muted: #4a6b50;
+    --color-text-heading: #142818;
+    --color-border: rgba(47, 120, 60, 0.18);
+    --color-primary: #2f8f46;
+    --color-secondary: #4a6b50;
+    --color-accent: #3cb371;
+    --color-accent2: #6b9e3e;
   }
 
   * {
@@ -24,7 +28,7 @@
 
   body {
     background-color: var(--color-bg);
-    color: white;
+    color: var(--color-text);
     font-family: 'Inter', 'Segoe UI', sans-serif;
     overflow-x: hidden;
   }
@@ -45,32 +49,45 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #4ade80, #86efac);
+    background: linear-gradient(135deg, #2f8f46, #5cb85c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .gradient-text-warm {
-    background: linear-gradient(135deg, #ff6b35, #ff9f43);
+    background: linear-gradient(135deg, #6b9e3e, #8fbc5a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass-card {
-    background: rgba(74, 222, 128, 0.04);
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(134, 239, 172, 0.12);
+    border: 1px solid var(--color-border);
     border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(47, 143, 70, 0.08);
+  }
+
+  .text-theme {
+    color: var(--color-text);
+  }
+
+  .text-theme-muted {
+    color: var(--color-text-muted);
+  }
+
+  .border-theme {
+    border-color: var(--color-border);
   }
 
   .neon-glow {
-    box-shadow: 0 0 20px rgba(145, 94, 255, 0.4), 0 0 60px rgba(145, 94, 255, 0.1);
+    box-shadow: 0 0 20px rgba(47, 143, 70, 0.3), 0 0 60px rgba(47, 143, 70, 0.1);
   }
 
   .neon-glow-cyan {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 20px rgba(60, 179, 113, 0.3), 0 0 60px rgba(60, 179, 113, 0.1);
   }
 
   .section-padding {

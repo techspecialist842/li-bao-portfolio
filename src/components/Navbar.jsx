@@ -26,7 +26,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[var(--color-bg-navbar)] backdrop-blur-xl border-b border-white/5 shadow-lg shadow-purple-900/10'
+          ? 'bg-[var(--color-bg-navbar)] backdrop-blur-xl border-b border-[var(--color-border)] shadow-lg shadow-green-900/5'
           : 'bg-transparent'
       }`}
     >
@@ -38,17 +38,16 @@ export default function Navbar() {
           whileHover={{ scale: 1.02 }}
         >
           <div className="relative w-10 h-10">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 opacity-80 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-green-600 to-green-400 opacity-90 group-hover:opacity-100 transition-opacity" />
             <div className="absolute inset-0 flex items-center justify-center text-white font-black text-lg">
               LB
             </div>
           </div>
-          <span className="text-white font-bold text-lg tracking-wide">
+          <span className="text-[var(--color-text)] font-bold text-lg tracking-wide">
             Li<span className="gradient-text"> Bao</span>
           </span>
         </motion.a>
 
-        {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.id}>
@@ -56,14 +55,14 @@ export default function Navbar() {
                 onClick={() => scrollTo(link.id)}
                 className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer ${
                   active === link.id
-                    ? 'text-white'
-                    : 'text-[#aaa6c3] hover:text-white'
+                    ? 'text-[var(--color-text)]'
+                    : 'text-theme-muted hover:text-[var(--color-text)]'
                 }`}
               >
                 {active === link.id && (
                   <motion.span
                     layoutId="nav-bg"
-                    className="absolute inset-0 rounded-lg bg-white/5 border border-white/10"
+                    className="absolute inset-0 rounded-lg bg-white/50 border border-[var(--color-border)]"
                   />
                 )}
                 <span className="relative z-10">{link.title}</span>
@@ -75,48 +74,46 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollTo('contact')}
-              className="ml-4 px-5 py-2 text-sm font-semibold text-white rounded-lg bg-gradient-to-r from-purple-600 to-cyan-500 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 cursor-pointer"
+              className="ml-4 px-5 py-2 text-sm font-semibold text-white rounded-lg bg-gradient-to-r from-green-600 to-green-500 hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 cursor-pointer"
             >
               Hire Me
             </motion.button>
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5 cursor-pointer p-2"
         >
           <motion.span
             animate={menuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-            className="w-6 h-0.5 bg-white block transition-all"
+            className="w-6 h-0.5 bg-[var(--color-text)] block transition-all"
           />
           <motion.span
             animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="w-6 h-0.5 bg-white block"
+            className="w-6 h-0.5 bg-[var(--color-text)] block"
           />
           <motion.span
             animate={menuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-            className="w-6 h-0.5 bg-white block"
+            className="w-6 h-0.5 bg-[var(--color-text)] block"
           />
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[var(--color-bg-navbar)] backdrop-blur-xl border-b border-white/5"
+            className="md:hidden bg-[var(--color-bg-navbar)] backdrop-blur-xl border-b border-[var(--color-border)]"
           >
             <ul className="px-6 py-4 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <button
                     onClick={() => scrollTo(link.id)}
-                    className="w-full text-left px-4 py-3 text-[#aaa6c3] hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                    className="w-full text-left px-4 py-3 text-theme-muted hover:text-[var(--color-text)] hover:bg-white/50 rounded-lg transition-all"
                   >
                     {link.title}
                   </button>

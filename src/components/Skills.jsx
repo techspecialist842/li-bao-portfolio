@@ -14,10 +14,10 @@ function SkillBar({ name, level, color, index }) {
       className="group"
     >
       <div className="flex justify-between items-center mb-2">
-        <span className="text-sm font-medium text-white">{name}</span>
+        <span className="text-sm font-medium text-[var(--color-text)]">{name}</span>
         <span className="text-xs font-semibold" style={{ color }}>{level}%</span>
       </div>
-      <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+      <div className="h-2 bg-green-900/10 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
@@ -56,7 +56,7 @@ function SkillCategory({ category, color, items, index }) {
 
       <div className="flex items-center gap-3 mb-6">
         <div className="w-3 h-3 rounded-full" style={{ background: color, boxShadow: `0 0 10px ${color}` }} />
-        <h3 className="text-white font-bold text-lg">{category}</h3>
+        <h3 className="text-[var(--color-text)] font-bold text-lg">{category}</h3>
       </div>
 
       <div className="space-y-4">
@@ -78,7 +78,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-purple-500/50" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-green-500/40" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionTitle
