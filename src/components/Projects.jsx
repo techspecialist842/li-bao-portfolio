@@ -35,7 +35,7 @@ function ProjectCard({ project, index }) {
         </div>
 
         <div className="absolute top-4 left-4 z-10">
-          <div className="w-12 h-12 rounded-xl bg-white/70 backdrop-blur-sm flex items-center justify-center text-2xl border border-[var(--color-border)]">
+          <div className="w-12 h-12 rounded-xl bg-white/5 backdrop-blur-sm flex items-center justify-center text-2xl border border-[var(--color-border)]">
             {project.icon}
           </div>
         </div>
@@ -46,7 +46,7 @@ function ProjectCard({ project, index }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-green-900/40 backdrop-blur-sm flex items-center justify-center gap-4 z-20"
+              className="absolute inset-0 bg-blue-900/40 backdrop-blur-sm flex items-center justify-center gap-4 z-20"
             >
               <motion.span
                 initial={{ y: 20, opacity: 0 }}
@@ -62,7 +62,7 @@ function ProjectCard({ project, index }) {
       </div>
 
       <div className="p-6">
-        <h3 className="text-[var(--color-text)] font-bold text-xl mb-3 group-hover:text-green-700 transition-colors">
+        <h3 className="text-[var(--color-text)] font-bold text-xl mb-3 group-hover:text-blue-300 transition-colors">
           {project.title}
         </h3>
         <p className="text-theme-muted text-sm leading-relaxed mb-4 line-clamp-3">
@@ -91,14 +91,14 @@ export default function Projects() {
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
 
       {/* Background decoration */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-lime-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionTitle
           eyebrow="Portfolio"
           title="Featured Projects"
-          subtitle="Websites, e-commerce rebuilds, and SaaS portals delivered for clients in Ukraine and abroad."
+          subtitle="Websites, e-commerce, SaaS portals, and mobile apps for clients in Ukraine and abroad."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

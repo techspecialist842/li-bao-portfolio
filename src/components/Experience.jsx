@@ -25,7 +25,7 @@ function TimelineItem({ exp, index, isLast }) {
           </div>
           <div className="flex-1">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <h3 className="text-[var(--color-text)] font-bold text-lg group-hover:text-green-700 transition-colors">
+              <h3 className="text-[var(--color-text)] font-bold text-lg group-hover:text-blue-300 transition-colors">
                 {exp.title}
               </h3>
               <span
@@ -53,10 +53,10 @@ function TimelineItem({ exp, index, isLast }) {
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.15 + 0.3, type: 'spring' }}
-          className="w-5 h-5 rounded-full border-2 border-green-600/30 flex items-center justify-center"
+          className="w-5 h-5 rounded-full border-2 border-blue-500/30 flex items-center justify-center"
           style={{ background: exp.color }}
         >
-          <div className="w-2 h-2 rounded-full bg-green-600" />
+          <div className="w-2 h-2 rounded-full bg-blue-500" />
         </motion.div>
       </div>
 
@@ -81,7 +81,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative hidden md:block">
           {/* Center line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-600/20 to-transparent" />
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-500/20 to-transparent" />
 
           {experiences.map((exp, i) => (
             <TimelineItem key={exp.company} exp={exp} index={i} isLast={i === experiences.length - 1} />
@@ -90,7 +90,7 @@ export default function Experience() {
 
         {/* Mobile: vertical stack */}
         <div className="md:hidden space-y-6 relative">
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-600/20 to-transparent" />
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-500/20 to-transparent" />
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.company}
@@ -104,7 +104,7 @@ export default function Experience() {
                 className="absolute left-2 top-3 w-5 h-5 rounded-full border-2 border-white/20 flex items-center justify-center"
                 style={{ background: exp.color }}
               >
-                <div className="w-2 h-2 rounded-full bg-green-600" />
+                <div className="w-2 h-2 rounded-full bg-blue-500" />
               </div>
               <div className="glass-card p-5 flex-1">
                 <div className="flex items-start gap-3">

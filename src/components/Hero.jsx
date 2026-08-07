@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import ParticleField from './canvas/ParticleField';
 import { profile } from '../constants';
 
-const roles = ['Senior Web Developer', 'Mobile Developer', 'React & Vue', 'WordPress & PHP'];
+const roles = ['React.js', 'Android', 'Python', 'Next.js & React Native'];
 
 function RoleTags() {
   return (
@@ -14,7 +14,7 @@ function RoleTags() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1 + i * 0.2, duration: 0.5 }}
-          className="px-3 py-1 text-sm rounded-full border border-[var(--color-border)] text-theme-muted bg-white/50"
+          className="px-3 py-1 text-sm rounded-full border border-[var(--color-border)] text-theme-muted bg-white/5"
         >
           {role}
         </motion.span>
@@ -50,10 +50,10 @@ export default function Hero() {
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-bg)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg)]/60 via-transparent to-[var(--color-bg)]/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg)]/70 via-transparent to-[var(--color-bg)]/40" />
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500/25 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-lime-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-sky-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-16 w-full">
         <div className="flex flex-col md:flex-row items-center gap-12">
@@ -62,9 +62,9 @@ export default function Hero() {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 text-green-700 text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-300 text-sm font-medium mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
               Available for freelance projects
             </motion.div>
 
@@ -82,7 +82,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-3 text-lg font-semibold text-green-700"
+              className="mt-3 text-lg font-semibold text-blue-300"
             >
               {profile.title}
             </motion.p>
@@ -94,11 +94,12 @@ export default function Hero() {
               className="mt-6 text-lg md:text-xl text-theme-muted leading-relaxed max-w-2xl"
             >
               Web Developer with{' '}
-              <span className="text-green-700 font-semibold">{profile.yearsExp} years</span> of experience
+              <span className="text-blue-300 font-semibold">{profile.yearsExp} years</span> of experience
               building{' '}
-              <span className="text-green-600 font-semibold">websites</span>,{' '}
-              <span className="text-lime-700 font-semibold">e-commerce stores</span>, and{' '}
-              <span className="text-green-700 font-semibold">web applications</span> for clients in{' '}
+              <span className="text-sky-300 font-semibold">websites</span>,{' '}
+              <span className="text-blue-200 font-semibold">e-commerce stores</span>,{' '}
+              <span className="text-sky-300 font-semibold">web applications</span>, and{' '}
+              <span className="text-blue-300 font-semibold">mobile apps</span> for clients in{' '}
               {profile.location} and abroad.
             </motion.p>
 
@@ -111,10 +112,10 @@ export default function Hero() {
               className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start"
             >
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(47,143,70,0.4)' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59,130,246,0.45)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3.5 bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold rounded-xl cursor-pointer"
+                className="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold rounded-xl cursor-pointer"
               >
                 View My Work
               </motion.button>
@@ -122,7 +123,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3.5 text-[var(--color-text)] font-semibold rounded-xl border border-[var(--color-border)] bg-white/60 hover:bg-white/80 transition-all cursor-pointer"
+                className="px-8 py-3.5 text-[var(--color-text)] font-semibold rounded-xl border border-[var(--color-border)] bg-white/5 hover:bg-white/10 transition-all cursor-pointer"
               >
                 Contact Me
               </motion.button>
@@ -146,17 +147,17 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5, type: 'spring' }}
             className="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0"
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-400/30 to-lime-400/30 blur-2xl animate-pulse" />
-            <div className="relative w-full h-full rounded-full bg-gradient-to-br from-green-200/80 to-lime-200/80 border border-green-400/40 flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 via-transparent to-lime-400/20" />
-              <span className="text-6xl font-black text-green-800/80 select-none">{profile.initials}</span>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 to-sky-400/20 blur-2xl animate-pulse" />
+            <div className="relative w-full h-full rounded-full bg-gradient-to-br from-blue-900/80 to-slate-900/80 border border-blue-400/30 flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-sky-400/10" />
+              <span className="text-6xl font-black text-blue-200/90 select-none">{profile.initials}</span>
             </div>
             {[0, 1, 2, 3].map((i) => (
               <motion.div
                 key={i}
                 className="absolute w-3 h-3 rounded-full"
                 style={{
-                  background: ['#2f8f46', '#5cb85c', '#6b9e3e', '#86efac'][i],
+                  background: ['#3b82f6', '#60a5fa', '#2563eb', '#93c5fd'][i],
                   top: '50%',
                   left: '50%',
                 }}
@@ -188,9 +189,9 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-green-600/30 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-blue-400/30 rounded-full flex justify-center pt-2"
         >
-          <div className="w-1 h-2 bg-green-600 rounded-full" />
+          <div className="w-1 h-2 bg-blue-400 rounded-full" />
         </motion.div>
       </motion.button>
     </section>

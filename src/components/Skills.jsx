@@ -17,7 +17,7 @@ function SkillBar({ name, level, color, index }) {
         <span className="text-sm font-medium text-[var(--color-text)]">{name}</span>
         <span className="text-xs font-semibold" style={{ color }}>{level}%</span>
       </div>
-      <div className="h-2 bg-green-900/10 rounded-full overflow-hidden">
+      <div className="h-2 bg-blue-950/50 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
@@ -78,13 +78,13 @@ export default function Skills() {
   return (
     <section id="skills" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg)]" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-green-500/40" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-blue-500/40" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionTitle
           eyebrow="Technical Expertise"
           title="My Skills"
-          subtitle="Frontend, backend, CMS, and mobile skills refined across 7+ years of client work."
+          subtitle="React, mobile, and backend skills refined across 7+ years — with React.js, Android, and Python as core strengths."
         />
 
         <div className="grid md:grid-cols-3 gap-8">

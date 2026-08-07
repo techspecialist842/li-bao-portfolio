@@ -12,7 +12,7 @@ const contactInfo = [
 ];
 
 const inputClass =
-  'w-full px-4 py-3 rounded-xl bg-white/70 border border-[var(--color-border)] text-[var(--color-text)] placeholder-green-800/30 focus:outline-none focus:border-green-500/50 focus:bg-white/90 transition-all text-sm';
+  'w-full px-4 py-3 rounded-xl bg-white/5 border border-[var(--color-border)] text-[var(--color-text)] placeholder-blue-800/30 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all text-sm';
 
 function ContactForm() {
   const [form, setForm] = useState({ name: '', subject: '', message: '' });
@@ -70,13 +70,13 @@ function ContactForm() {
       <motion.button
         type="submit"
         disabled={status === 'sending' || status === 'sent'}
-        whileHover={{ scale: status ? 1 : 1.02, boxShadow: '0 0 30px rgba(47,143,70,0.4)' }}
+        whileHover={{ scale: status ? 1 : 1.02, boxShadow: '0 0 30px rgba(59,130,246,0.45)' }}
         whileTap={{ scale: 0.98 }}
         className="w-full py-4 rounded-xl font-semibold text-white transition-all duration-300 cursor-pointer disabled:cursor-not-allowed relative overflow-hidden"
         style={{
           background: status === 'sent'
             ? 'linear-gradient(135deg, #22c55e, #16a34a)'
-            : 'linear-gradient(135deg, #2f8f46, #5cb85c)',
+            : 'linear-gradient(135deg, #2563eb, #60a5fa)',
         }}
       >
         {status === 'sending' && (
@@ -98,7 +98,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-mid)] to-[var(--color-bg-deep)]" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-t from-transparent to-green-500/30" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-t from-transparent to-blue-500/30" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionTitle

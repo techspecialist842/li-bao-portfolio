@@ -28,7 +28,7 @@ function Stars() {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled>
         <PointMaterial
           transparent
-          color="#2f8f46"
+          color="#3b82f6"
           size={0.006}
           sizeAttenuation
           depthWrite={false}
@@ -62,7 +62,7 @@ function FloatingGeometry() {
       <mesh ref={meshRef} position={[2.5, 0, -1]}>
         <icosahedronGeometry args={[0.7, 1]} />
         <meshStandardMaterial
-          color="#2f8f46"
+          color="#3b82f6"
           wireframe
           transparent
           opacity={0.5}
@@ -71,7 +71,7 @@ function FloatingGeometry() {
       <mesh ref={mesh2Ref} position={[-2.8, 0.5, -1.5]}>
         <octahedronGeometry args={[0.5, 0]} />
         <meshStandardMaterial
-          color="#5cb85c"
+          color="#60a5fa"
           wireframe
           transparent
           opacity={0.4}
@@ -80,7 +80,7 @@ function FloatingGeometry() {
       <mesh ref={mesh3Ref} position={[0, -1.8, -2]}>
         <torusGeometry args={[0.6, 0.15, 8, 20]} />
         <meshStandardMaterial
-          color="#6b9e3e"
+          color="#2563eb"
           wireframe
           transparent
           opacity={0.35}
@@ -94,8 +94,8 @@ export default function ParticleField() {
   return (
     <Canvas camera={{ position: [0, 0, 1] }}>
       <ambientLight intensity={0.5} />
-      <pointLight position={[2, 2, 2]} color="#5cb85c" intensity={2} />
-      <pointLight position={[-2, -2, 2]} color="#86efac" intensity={1.5} />
+      <pointLight position={[2, 2, 2]} color="#60a5fa" intensity={2} />
+      <pointLight position={[-2, -2, 2]} color="#93c5fd" intensity={1.5} />
       <Stars />
       <FloatingGeometry />
     </Canvas>

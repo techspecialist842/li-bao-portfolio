@@ -26,7 +26,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[var(--color-bg-navbar)] backdrop-blur-xl border-b border-[var(--color-border)] shadow-lg shadow-green-900/5'
+          ? 'bg-[var(--color-bg-navbar)] backdrop-blur-xl border-b border-[var(--color-border)] shadow-lg shadow-blue-900/5'
           : 'bg-transparent'
       }`}
     >
@@ -38,7 +38,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.02 }}
         >
           <div className="relative w-10 h-10">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-green-600 to-green-400 opacity-90 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500 to-blue-400 opacity-90 group-hover:opacity-100 transition-opacity" />
             <div className="absolute inset-0 flex items-center justify-center text-white font-black text-sm">
               {profile.initials}
             </div>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 {active === link.id && (
                   <motion.span
                     layoutId="nav-bg"
-                    className="absolute inset-0 rounded-lg bg-white/50 border border-[var(--color-border)]"
+                    className="absolute inset-0 rounded-lg bg-white/10 border border-[var(--color-border)]"
                   />
                 )}
                 <span className="relative z-10">{link.title}</span>
@@ -74,7 +74,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollTo('contact')}
-              className="ml-4 px-5 py-2 text-sm font-semibold text-white rounded-lg bg-gradient-to-r from-green-600 to-green-500 hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 cursor-pointer"
+              className="ml-4 px-5 py-2 text-sm font-semibold text-white rounded-lg bg-gradient-to-r from-blue-600 to-sky-500 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer"
             >
               Hire Me
             </motion.button>

@@ -8,36 +8,36 @@ export const navLinks = [
 
 export const skills = [
   {
-    category: 'Frontend',
-    color: '#2f8f46',
+    category: 'Frontend & Web',
+    color: '#3b82f6',
     items: [
-      { name: 'React.js', level: 95 },
-      { name: 'Next.js', level: 90 },
-      { name: 'Vue.js', level: 88 },
+      { name: 'React.js', level: 96 },
+      { name: 'Next.js', level: 92 },
       { name: 'TypeScript', level: 90 },
-      { name: 'HTML5 / CSS3', level: 95 },
+      { name: 'Vue.js', level: 86 },
+      { name: 'HTML5 / CSS3', level: 94 },
     ],
   },
   {
-    category: 'Backend & CMS',
-    color: '#228b3a',
+    category: 'Mobile',
+    color: '#2563eb',
     items: [
-      { name: 'PHP / Laravel', level: 92 },
-      { name: 'WordPress', level: 94 },
-      { name: 'WooCommerce', level: 90 },
-      { name: 'MySQL / PostgreSQL', level: 88 },
-      { name: 'REST APIs', level: 90 },
+      { name: 'Android', level: 94 },
+      { name: 'React Native', level: 88 },
+      { name: 'Flutter', level: 84 },
+      { name: 'Python', level: 90 },
+      { name: 'iOS (cross-platform)', level: 80 },
     ],
   },
   {
-    category: 'Mobile & Tools',
-    color: '#4a8c2a',
+    category: 'Backend & Platforms',
+    color: '#60a5fa',
     items: [
-      { name: 'Android', level: 92 },
-      { name: 'Python', level: 88 },
-      { name: 'Shopify', level: 85 },
-      { name: 'Docker', level: 82 },
-      { name: 'Git / Figma', level: 90 },
+      { name: 'PostgreSQL', level: 88 },
+      { name: 'SaaS / CRM', level: 86 },
+      { name: 'Node.js / PHP', level: 88 },
+      { name: 'WordPress / Laravel', level: 90 },
+      { name: 'Docker / Git', level: 85 },
     ],
   },
 ];
@@ -49,25 +49,19 @@ export const projects = [
     description:
       'Rebuilt an online store with a modern React front-end integrated with WooCommerce and Stripe. Improved performance, checkout UX, and mobile responsiveness for a smoother shopping experience.',
     tags: ['React', 'WooCommerce', 'Stripe', 'JavaScript', 'CSS3'],
-    color: '#2f8f46',
-    gradient: 'from-green-900/40 to-emerald-900/40',
+    color: '#3b82f6',
+    gradient: 'from-blue-900/50 to-slate-900/50',
     icon: '🛒',
-    github: '#',
-    live: '#',
-    stats: { stars: 0, forks: 0 },
   },
   {
     id: 2,
     title: 'B2B SaaS Client Portal',
     description:
       'Built a client portal for a B2B SaaS company where users can view reports, notifications, and account settings in one place — designed for clarity, reliability, and day-to-day business use.',
-    tags: ['React', 'Next.js', 'REST APIs', 'TypeScript', 'PostgreSQL'],
-    color: '#228b3a',
-    gradient: 'from-lime-900/40 to-green-900/40',
+    tags: ['React', 'Next.js', 'SaaS', 'TypeScript', 'PostgreSQL'],
+    color: '#2563eb',
+    gradient: 'from-indigo-900/50 to-blue-900/50',
     icon: '📊',
-    github: '#',
-    live: '#',
-    stats: { stars: 0, forks: 0 },
   },
   {
     id: 3,
@@ -75,51 +69,39 @@ export const projects = [
     description:
       'Created a multi-location clinic website with online booking flows and clear service pages. Built with WordPress, PHP, and JavaScript for easy content management by clinic staff.',
     tags: ['WordPress', 'PHP', 'JavaScript', 'MySQL', 'Responsive Design'],
-    color: '#4a8c2a',
-    gradient: 'from-emerald-900/40 to-teal-900/40',
+    color: '#60a5fa',
+    gradient: 'from-sky-900/50 to-blue-900/50',
     icon: '🏥',
-    github: '#',
-    live: '#',
-    stats: { stars: 0, forks: 0 },
   },
   {
     id: 4,
-    title: 'Agency Client Web Applications',
+    title: 'Cross-Platform Mobile Apps',
     description:
-      'Developed and maintained websites and web applications for agency clients at Horizon Web Studio — from landing pages to custom web apps delivered on time for startups and small businesses.',
-    tags: ['React', 'Vue.js', 'Laravel', 'WordPress', 'Docker'],
-    color: '#3cb371',
-    gradient: 'from-green-800/40 to-lime-800/40',
-    icon: '🌐',
-    github: '#',
-    live: '#',
-    stats: { stars: 0, forks: 0 },
+      'Delivered mobile experiences with React Native, Flutter, and Android — focusing on polished UI, stable releases, and practical features for users on the go.',
+    tags: ['React Native', 'Flutter', 'Android', 'JavaScript', 'API'],
+    color: '#1d4ed8',
+    gradient: 'from-blue-950/50 to-indigo-900/50',
+    icon: '📱',
   },
   {
     id: 5,
+    title: 'Agency Client Web Applications',
+    description:
+      'Developed and maintained websites and web applications for agency clients at Horizon Web Studio — from landing pages to custom web apps delivered on time for startups and small businesses.',
+    tags: ['React', 'Next.js', 'Vue.js', 'Laravel', 'Docker'],
+    color: '#3b82f6',
+    gradient: 'from-slate-900/50 to-blue-900/50',
+    icon: '🌐',
+  },
+  {
+    id: 6,
     title: 'Multi-Language Business Sites',
     description:
       'Built WordPress and Laravel websites for business clients, including multi-language setups, custom themes, and integrations tailored to each brand’s goals.',
     tags: ['WordPress', 'Laravel', 'PHP', 'MySQL', 'Figma'],
-    color: '#2e9e4a',
-    gradient: 'from-lime-800/40 to-green-800/40',
+    color: '#2563eb',
+    gradient: 'from-blue-900/40 to-cyan-900/40',
     icon: '🌍',
-    github: '#',
-    live: '#',
-    stats: { stars: 0, forks: 0 },
-  },
-  {
-    id: 6,
-    title: 'Shopify Storefronts',
-    description:
-      'Delivered Shopify storefronts with clean product pages, responsive layouts, and conversion-focused design for e-commerce brands entering or growing online.',
-    tags: ['Shopify', 'JavaScript', 'HTML5', 'CSS3', 'Liquid'],
-    color: '#6b9e3e',
-    gradient: 'from-yellow-900/30 to-green-900/40',
-    icon: '🛍️',
-    github: '#',
-    live: '#',
-    stats: { stars: 0, forks: 0 },
   },
 ];
 
@@ -131,7 +113,7 @@ export const experiences = [
     location: 'Kyiv, Ukraine (Remote)',
     description:
       'Develop and maintain websites and web applications for agency clients. Build reliable solutions for startups, agencies, and small businesses — from marketing sites to custom web apps — with a focus on quality and on-time delivery.',
-    color: '#2f8f46',
+    color: '#3b82f6',
     icon: '🚀',
   },
   {
@@ -141,7 +123,7 @@ export const experiences = [
     location: 'Lviv, Ukraine',
     description:
       'Developed WordPress and Laravel websites for business clients. Built multi-language sites, custom features, and integrations while collaborating remotely with teams and stakeholders in English.',
-    color: '#228b3a',
+    color: '#2563eb',
     icon: '💻',
   },
   {
@@ -150,8 +132,8 @@ export const experiences = [
     period: 'Jan 2017 — Jan 2019',
     location: 'Remote',
     description:
-      'Built responsive landing pages with HTML, CSS, and JavaScript. Customized WordPress themes and shipped front-end features that helped grow into full-stack and senior roles.',
-    color: '#4a8c2a',
+      'Built responsive landing pages with HTML, CSS, and JavaScript. Customized WordPress themes and shipped front-end features that helped grow into full-stack, mobile, and senior roles.',
+    color: '#60a5fa',
     icon: '💡',
   },
 ];
@@ -165,6 +147,7 @@ export const profile = {
   yearsExp: '7+',
   completedProjects: '6',
   rating: '5.0',
+  mainSkills: ['React.js', 'Android', 'Python'],
   tagline:
-    'Building websites, e-commerce stores, and web applications for clients in Ukraine and abroad.',
+    'Building websites, e-commerce stores, web applications, and mobile experiences for clients in Ukraine and abroad.',
 };
