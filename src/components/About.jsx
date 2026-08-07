@@ -1,18 +1,19 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { profile } from '../constants';
 
 const highlights = [
-  { icon: '🏗️', title: 'System Architecture', desc: 'Designing distributed, fault-tolerant systems at scale' },
-  { icon: '⚡', title: 'Performance Obsessed', desc: 'Optimizing every millisecond for peak user experience' },
-  { icon: '🤝', title: 'Team Leadership', desc: 'Mentoring engineers and driving technical excellence' },
-  { icon: '🌍', title: 'Open Source', desc: 'Active contributor with 5,000+ combined GitHub stars' },
+  { icon: '🌐', title: 'Web Applications', desc: 'Websites and custom web apps for agencies, startups, and small businesses' },
+  { icon: '🛒', title: 'E-Commerce', desc: 'Online stores with WooCommerce, Shopify, Stripe, and conversion-focused UX' },
+  { icon: '📱', title: 'Mobile-Ready', desc: 'Responsive design and mobile development experience across platforms' },
+  { icon: '🤝', title: 'Remote Delivery', desc: 'Clear English communication and projects delivered on schedule' },
 ];
 
 const technologies = [
-  'React', 'TypeScript', 'Node.js', 'Python', 'Go', 'Rust',
-  'PostgreSQL', 'Redis', 'Kafka', 'Docker', 'Kubernetes', 'AWS',
-  'Three.js', 'GraphQL', 'WebRTC', 'Terraform',
+  'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Next.js',
+  'PHP', 'Laravel', 'WordPress', 'WooCommerce', 'Shopify',
+  'REST APIs', 'MySQL', 'PostgreSQL', 'Docker', 'Git', 'Figma', 'Android', 'Python',
 ];
 
 function SectionTitle({ eyebrow, title, subtitle }) {
@@ -63,11 +64,10 @@ export default function About() {
         <SectionTitle
           eyebrow="Who I Am"
           title="About Me"
-          subtitle="Building the future, one commit at a time."
+          subtitle="A reliable senior web developer for startups, agencies, and small businesses."
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -76,21 +76,19 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-theme-muted text-lg leading-relaxed">
-              I'm <span className="text-[var(--color-text)] font-semibold">Li Bao</span>, a Software Engineer with{' '}
-              <span className="text-green-700 font-semibold">6+ years</span> of experience crafting
-              high-performance web applications and distributed systems. Based in China, I work remotely
-              with teams across the globe, turning complex problems into elegant, scalable solutions.
+              I'm <span className="text-[var(--color-text)] font-semibold">{profile.name}</span>, a{' '}
+              <span className="text-green-700 font-semibold">Senior Web Developer</span> with{' '}
+              {profile.yearsExp} years of experience building websites, e-commerce stores, and web
+              applications for clients in {profile.location} and abroad.
             </p>
             <p className="text-theme-muted text-lg leading-relaxed">
-              My passion lies at the intersection of engineering and user experience — I believe great
-              software should be both{' '}
-              <span className="text-green-700 font-semibold">technically excellent</span> and{' '}
-              <span className="text-lime-700 font-semibold">delightfully usable</span>. From architecting
-              microservices that handle millions of requests, to crafting immersive 3D web experiences,
-              I bring full-stack expertise to every project.
+              I work with{' '}
+              <span className="text-green-700 font-semibold">HTML, CSS, JavaScript, React, Vue.js, WordPress, and PHP</span>.
+              I am comfortable working remotely, communicating with clients in English, and delivering
+              projects on time — especially for startups, agencies, and small businesses that need a
+              reliable web developer.
             </p>
 
-            {/* Tech Tags */}
             <div className="pt-4">
               <p className="text-sm font-semibold text-theme-muted mb-3 uppercase tracking-wider">Tech Stack</p>
               <div className="flex flex-wrap gap-2">
@@ -111,7 +109,6 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right: Highlight cards */}
           <div ref={ref} className="grid grid-cols-2 gap-4">
             {highlights.map((item, i) => (
               <motion.div

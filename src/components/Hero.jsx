@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { Suspense } from 'react';
 import ParticleField from './canvas/ParticleField';
+import { profile } from '../constants';
 
-const roles = ['Software Engineer', 'Full Stack Developer', 'Cloud Architect', '3D Web Creator'];
+const roles = ['Senior Web Developer', 'Mobile Developer', 'React & Vue', 'WordPress & PHP'];
 
-function TypewriterText() {
+function RoleTags() {
   return (
     <motion.div className="flex flex-wrap gap-2 justify-center md:justify-start mt-2">
       {roles.map((role, i) => (
@@ -64,7 +65,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 text-green-700 text-sm font-medium mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Available for opportunities
+              Available for freelance projects
             </motion.div>
 
             <motion.h1
@@ -74,8 +75,17 @@ export default function Hero() {
               className="text-5xl md:text-7xl font-black leading-tight text-[var(--color-text-heading)]"
             >
               Hi, I'm{' '}
-              <span className="gradient-text">Li Bao</span>
+              <span className="gradient-text">{profile.name.split(' ')[0]}</span>
             </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-3 text-lg font-semibold text-green-700"
+            >
+              {profile.title}
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -83,14 +93,16 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-6 text-lg md:text-xl text-theme-muted leading-relaxed max-w-2xl"
             >
-              A passionate software engineer from China building{' '}
-              <span className="text-green-700 font-semibold">scalable systems</span>,{' '}
-              <span className="text-green-600 font-semibold">stunning interfaces</span>, and{' '}
-              <span className="text-lime-700 font-semibold">cloud-native architectures</span>{' '}
-              that power millions of users.
+              Web Developer with{' '}
+              <span className="text-green-700 font-semibold">{profile.yearsExp} years</span> of experience
+              building{' '}
+              <span className="text-green-600 font-semibold">websites</span>,{' '}
+              <span className="text-lime-700 font-semibold">e-commerce stores</span>, and{' '}
+              <span className="text-green-700 font-semibold">web applications</span> for clients in{' '}
+              {profile.location} and abroad.
             </motion.p>
 
-            <TypewriterText />
+            <RoleTags />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -122,9 +134,9 @@ export default function Hero() {
               transition={{ delay: 1.8 }}
               className="mt-12 grid grid-cols-3 gap-4 max-w-sm mx-auto md:mx-0"
             >
-              <StatCard value="6+" label="Years Exp." delay={1.9} />
-              <StatCard value="50+" label="Projects" delay={2.0} />
-              <StatCard value="20M+" label="Users Served" delay={2.1} />
+              <StatCard value={`${profile.yearsExp}`} label="Years Exp." delay={1.9} />
+              <StatCard value={profile.completedProjects} label="Projects Done" delay={2.0} />
+              <StatCard value={profile.rating} label="Client Rating" delay={2.1} />
             </motion.div>
           </div>
 
@@ -137,7 +149,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-400/30 to-lime-400/30 blur-2xl animate-pulse" />
             <div className="relative w-full h-full rounded-full bg-gradient-to-br from-green-200/80 to-lime-200/80 border border-green-400/40 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 via-transparent to-lime-400/20" />
-              <span className="text-8xl select-none">👨‍💻</span>
+              <span className="text-6xl font-black text-green-800/80 select-none">{profile.initials}</span>
             </div>
             {[0, 1, 2, 3].map((i) => (
               <motion.div

@@ -84,7 +84,7 @@ export default function Skills() {
         <SectionTitle
           eyebrow="Technical Expertise"
           title="My Skills"
-          subtitle="A comprehensive toolkit built through years of hands-on engineering across the full stack."
+          subtitle="Frontend, backend, CMS, and mobile skills refined across 7+ years of client work."
         />
 
         <div className="grid md:grid-cols-3 gap-8">

@@ -40,15 +40,6 @@ function ProjectCard({ project, index }) {
           </div>
         </div>
 
-        <div className="absolute top-4 right-4 z-10 flex gap-2">
-          <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white/70 backdrop-blur-sm text-xs text-theme-muted border border-[var(--color-border)]">
-            ⭐ {project.stats.stars.toLocaleString()}
-          </div>
-          <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white/70 backdrop-blur-sm text-xs text-theme-muted border border-[var(--color-border)]">
-            🍴 {project.stats.forks}
-          </div>
-        </div>
-
         <AnimatePresence>
           {hovered && (
             <motion.div
@@ -57,25 +48,14 @@ function ProjectCard({ project, index }) {
               exit={{ opacity: 0 }}
               className="absolute inset-0 bg-green-900/40 backdrop-blur-sm flex items-center justify-center gap-4 z-20"
             >
-              <motion.a
-                href={project.github}
+              <motion.span
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.05 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/90 border border-[var(--color-border)] text-[var(--color-text)] text-sm font-medium hover:bg-white transition-colors"
+                className="px-4 py-2 rounded-lg text-white text-sm font-medium"
+                style={{ background: project.color + 'cc' }}
               >
-                <span>🐙</span> GitHub
-              </motion.a>
-              <motion.a
-                href={project.live}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-white text-sm font-medium transition-colors"
-                style={{ background: project.color + '99' }}
-              >
-                <span>🚀</span> Live Demo
-              </motion.a>
+                Featured Work
+              </motion.span>
             </motion.div>
           )}
         </AnimatePresence>
@@ -118,7 +98,7 @@ export default function Projects() {
         <SectionTitle
           eyebrow="Portfolio"
           title="Featured Projects"
-          subtitle="A selection of my best work — from AI platforms to DeFi protocols, each built with care and craftsmanship."
+          subtitle="Websites, e-commerce rebuilds, and SaaS portals delivered for clients in Ukraine and abroad."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -126,29 +106,6 @@ export default function Projects() {
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <a
-            href="https://github.com/libao-engineer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl border border-[var(--color-border)] text-theme-muted hover:text-[var(--color-text)] hover:border-green-500/50 transition-all duration-300 group"
-          >
-            <span>🐙</span>
-            <span>View All Projects on GitHub</span>
-            <motion.span
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              →
-            </motion.span>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

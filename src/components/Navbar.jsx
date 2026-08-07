@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { navLinks } from '../constants';
+import { navLinks, profile } from '../constants';
 
 export default function Navbar() {
   const [active, setActive] = useState('');
@@ -39,12 +39,12 @@ export default function Navbar() {
         >
           <div className="relative w-10 h-10">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-green-600 to-green-400 opacity-90 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute inset-0 flex items-center justify-center text-white font-black text-lg">
-              LB
+            <div className="absolute inset-0 flex items-center justify-center text-white font-black text-sm">
+              {profile.initials}
             </div>
           </div>
           <span className="text-[var(--color-text)] font-bold text-lg tracking-wide">
-            Li<span className="gradient-text"> Bao</span>
+            Yevgen<span className="gradient-text"> S.</span>
           </span>
         </motion.a>
 

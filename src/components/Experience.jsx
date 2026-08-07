@@ -75,7 +75,7 @@ export default function Experience() {
         <SectionTitle
           eyebrow="My Journey"
           title="Experience & Education"
-          subtitle="The path that shaped my engineering mindset and technical expertise."
+          subtitle="From junior developer to senior web developer delivering remote freelance and agency work."
         />
 
         {/* Timeline */}

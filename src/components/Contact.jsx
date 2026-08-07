@@ -2,19 +2,20 @@ import { Suspense, useState } from 'react';
 import { motion } from 'framer-motion';
 import { SectionTitle } from './About';
 import ContactGlobe from './canvas/ContactGlobe';
+import { profile } from '../constants';
 
 const contactInfo = [
-  { icon: '📧', label: 'Email', value: 'libao.engineer@gmail.com', href: 'mailto:libao.engineer@gmail.com' },
-  { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/libao', href: 'https://linkedin.com/in/libao' },
-  { icon: '🐙', label: 'GitHub', value: 'github.com/libao-engineer', href: 'https://github.com/libao-engineer' },
-  { icon: '📍', label: 'Location', value: 'China (Open to Remote)', href: null },
+  { icon: '📍', label: 'Location', value: `${profile.location} (Remote)` },
+  { icon: '💼', label: 'Role', value: profile.title },
+  { icon: '⭐', label: 'Rating', value: `${profile.rating} from clients` },
+  { icon: '✅', label: 'Completed', value: `${profile.completedProjects} projects` },
 ];
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl bg-white/70 border border-[var(--color-border)] text-[var(--color-text)] placeholder-green-800/30 focus:outline-none focus:border-green-500/50 focus:bg-white/90 transition-all text-sm';
 
 function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', subject: '', message: '' });
   const [status, setStatus] = useState(null);
 
   const handleSubmit = (e) => {
@@ -22,7 +23,7 @@ function ContactForm() {
     setStatus('sending');
     setTimeout(() => {
       setStatus('sent');
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: '', subject: '', message: '' });
     }, 1500);
   };
 
@@ -38,7 +39,7 @@ function ContactForm() {
       <div className="grid md:grid-cols-2 gap-5">
         {[
           { id: 'name', label: 'Your Name', placeholder: 'John Smith', type: 'text' },
-          { id: 'email', label: 'Email Address', placeholder: 'john@example.com', type: 'email' },
+          { id: 'subject', label: 'Subject', placeholder: 'Project inquiry', type: 'text' },
         ].map((field) => (
           <div key={field.id}>
             <label className="block text-sm font-medium text-theme-muted mb-2">{field.label}</label>
@@ -103,7 +104,7 @@ export default function Contact() {
         <SectionTitle
           eyebrow="Get In Touch"
           title="Let's Work Together"
-          subtitle="Whether you have a project in mind, an opportunity to discuss, or just want to connect — I'd love to hear from you."
+          subtitle="Looking for freelance projects — especially for startups, agencies, and small businesses that need a reliable web developer."
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -124,25 +125,11 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
+                  className="glass-card p-4"
                 >
-                  {info.href ? (
-                    <a
-                      href={info.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block glass-card p-4 hover:border-green-500/40 hover:bg-white/70 transition-all group"
-                    >
-                      <div className="text-2xl mb-2">{info.icon}</div>
-                      <div className="text-xs font-semibold text-theme-muted uppercase tracking-wider mb-1">{info.label}</div>
-                      <div className="text-[var(--color-text)] text-xs font-medium group-hover:text-green-700 transition-colors truncate">{info.value}</div>
-                    </a>
-                  ) : (
-                    <div className="glass-card p-4">
-                      <div className="text-2xl mb-2">{info.icon}</div>
-                      <div className="text-xs font-semibold text-theme-muted uppercase tracking-wider mb-1">{info.label}</div>
-                      <div className="text-[var(--color-text)] text-xs font-medium">{info.value}</div>
-                    </div>
-                  )}
+                  <div className="text-2xl mb-2">{info.icon}</div>
+                  <div className="text-xs font-semibold text-theme-muted uppercase tracking-wider mb-1">{info.label}</div>
+                  <div className="text-[var(--color-text)] text-xs font-medium">{info.value}</div>
                 </motion.div>
               ))}
             </div>
@@ -150,7 +137,7 @@ export default function Contact() {
 
           <div className="glass-card p-8">
             <h3 className="text-[var(--color-text)] font-bold text-2xl mb-2">Send a Message</h3>
-            <p className="text-theme-muted text-sm mb-8">I typically respond within 24 hours.</p>
+            <p className="text-theme-muted text-sm mb-8">Share your project details and I will get back to you.</p>
             <ContactForm />
           </div>
         </div>
