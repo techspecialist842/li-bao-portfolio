@@ -9,6 +9,6 @@ export default defineConfig(({ command }) => {
   return {
     plugins: [react(), tailwindcss()],
     // GitHub Pages needs a subpath; Vercel and local dev use root.
-    base: isDev || isVercel ? '/' : '/li-bao-portfolio/',
+    base: isDev || isVercel ? '/' : '/Yevgen-Portfolio/',
   }
 })
