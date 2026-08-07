@@ -30,7 +30,7 @@ function FloatingShape({ color, position, shape = 'torus' }) {
   );
 }
 
-export default function ProjectScene({ color = '#915eff' }) {
+export default function ProjectScene({ color = '#3b82f6' }) {
   return (
     <Canvas camera={{ position: [0, 0, 4] }}>
       <ambientLight intensity={0.3} />

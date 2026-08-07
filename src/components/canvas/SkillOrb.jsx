@@ -66,7 +66,7 @@ function ParticleRing({ color }) {
   );
 }
 
-export default function SkillOrb({ color = '#915eff' }) {
+export default function SkillOrb({ color = '#3b82f6' }) {
   return (
     <Canvas camera={{ position: [0, 0, 3.5] }}>
       <ambientLight intensity={0.4} />

@@ -63,7 +63,7 @@ function Globe() {
           const geometry = new THREE.BufferGeometry().setFromPoints(linePoints);
           return (
             <line key={i} geometry={geometry}>
-              <lineBasicMaterial color="#915eff" transparent opacity={0.25} />
+              <lineBasicMaterial color="#3b82f6" transparent opacity={0.25} />
             </line>
           );
         })}
@@ -104,8 +104,8 @@ export default function ContactGlobe() {
   return (
     <Canvas camera={{ position: [0, 0, 4] }}>
       <ambientLight intensity={0.3} />
-      <pointLight position={[4, 4, 4]} color="#915eff" intensity={5} />
-      <pointLight position={[-4, -4, 4]} color="#00d4ff" intensity={3} />
+      <pointLight position={[4, 4, 4]} color="#3b82f6" intensity={5} />
+      <pointLight position={[-4, -4, 4]} color="#60a5fa" intensity={3} />
       <Globe />
       <Dots />
     </Canvas>

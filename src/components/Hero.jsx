@@ -149,8 +149,14 @@ export default function Hero() {
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 to-sky-400/20 blur-2xl animate-pulse" />
             <div className="relative w-full h-full rounded-full bg-gradient-to-br from-blue-900/80 to-slate-900/80 border border-blue-400/30 flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-sky-400/10" />
-              <span className="text-6xl font-black text-blue-200/90 select-none">{profile.initials}</span>
+              <img
+                src={`${import.meta.env.BASE_URL}avatar.png`}
+                alt={profile.name}
+                className="absolute inset-0 w-full h-full object-cover"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 via-transparent to-sky-400/10" />
+              <span className="relative text-6xl font-black text-blue-200/90 select-none">{profile.initials}</span>
             </div>
             {[0, 1, 2, 3].map((i) => (
               <motion.div
